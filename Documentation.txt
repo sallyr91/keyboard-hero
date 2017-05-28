@@ -1,0 +1,55 @@
+Salvatore Rosa - Keyboard Hero
+
+Info:
+
+-Uses Python 3.1 with Pygame 1.9.1.
+
+-Graphics, sound, and midi are all handled with Pygame.
+
+-Will read first loaded midi device for input.
+
+-Uses midi note values 48 through 60.
+
+-You can also use the computer keyboard keys q through \ (horizontally)
+for playing the game.
+
+-In the songs folder: song0.txt, song1.txt, and song2.txt 
+correspond to menu choices song 1, song 2, and song 3.
+
+-Text files are read left to right and converted into 
+songs according to the following characters:
+
+c: c note
+C: c sharp note
+d: d note
+D: d sharp note
+e: e note
+f: f note
+F: f sharp note
+g: g note
+G: g sharp note
+a: a note
+A: a sharp note
+b: b note
+o: octave of c note
+x: one note pause
+
+Game:
+
+-When a note reaches the end of the screen or you press a 
+key when a note is not in the keys hit, box you lose a life.
+
+-Win the game by having at least one life left when all notes are depleated.
+
+-Swap out the text files in the songs folder with your own musicial creations!
+
+Note:
+
+-Should work on Mac, one possible issue might be the direction of slashes when loading
+sounds, images, and text files (if thats a thing). In that case you could just change the slash direction
+on line 215 when loading the .txt files: 
+notes = list(load_notes('songs\{0}'.format(button.tag), note_positions, note_images)), and
+anywhere else as needed.
+
+-If you download pygame make sure it is version 1.9.1 for 3.1, the midi module is broken
+in the latest release.
